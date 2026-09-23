@@ -1,0 +1,19 @@
+# Core RAG dependencies
+langchain>=0.2.0
+langchain-community>=0.2.0
+langchain-core>=0.2.0
+
+# Local HuggingFace embeddings
+sentence-transformers>=3.0.0
+
+# PostgreSQL and pgvector support
+psycopg2-binary>=2.9.9
+pgvector>=0.3.0
+
+# Redis client for semantic cache
+redis>=5.0.0
+
+# Utilities
+numpy>=1.26.0
+requests>=2.31.0
+python-dotenv>=1.0.0
