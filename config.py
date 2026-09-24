@@ -12,18 +12,18 @@ import os
 from pathlib import Path
 from dotenv import load_dotenv
 
-# Load .env file if present
-load_dotenv()
-
 # Base project directories
 BASE_DIR = Path(__file__).resolve().parent
 DATA_PATH = BASE_DIR / "data" / "documents.txt"
+
+# Load .env file explicitly from project root if present
+load_dotenv(dotenv_path=BASE_DIR / ".env")
 
 # PostgreSQL + pgvector settings
 POSTGRES_HOST = os.getenv("POSTGRES_HOST", "127.0.0.1")
 POSTGRES_PORT = int(os.getenv("POSTGRES_PORT", 5432))
 POSTGRES_USER = os.getenv("POSTGRES_USER", "postgres")
-POSTGRES_PASSWORD = os.getenv("POSTGRES_PASSWORD", "postgres")
+POSTGRES_PASSWORD = os.getenv("POSTGRES_PASSWORD", "")
 POSTGRES_DB = os.getenv("POSTGRES_DB", "rag_db")
 POSTGRES_TABLE = os.getenv("POSTGRES_TABLE", "rag_documents")
 

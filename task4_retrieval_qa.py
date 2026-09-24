@@ -153,7 +153,8 @@ class LocalOllamaLLM(LLM):
             payload["options"]["stop"] = stop
 
         try:
-            response = requests.post(url, json=payload, timeout=60)
+            # Allow up to 180s for CPU inference on large 8B models like llama3
+            response = requests.post(url, json=payload, timeout=180)
             if response.status_code == 200:
                 data = response.json()
                 return data.get("response", "").strip()
