@@ -229,7 +229,7 @@ def main():
     print(f"Answer: {res1['answer']}")
 
     # Demo Query 2 (Semantically similar query -> CACHE HIT)
-    q2 = "What is the source of electrical power for the Curiosity rover?"
+    q2 = "What power source is used by Curiosity?"
     print("\n" + "=" * 75)
     print("RUNNING QUERY 2 (Near-duplicate / Semantically similar):")
     res2 = answer_with_semantic_cache(q2)
